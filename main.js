@@ -50,6 +50,7 @@ for(const item of arrayPersonas){
     console.log(item.formaDePago);
 }
 
+//OPERACIONES A UTILIZAR
 function operaciones(operacion){
 if(operacion === "sumar"){
     return (x, y) => x + y;
@@ -69,13 +70,17 @@ if(operacion === "dividir"){
 }
 
 //SUMAR LAS EDADES INGRESADAS
+let sumaEdades = 0;
 function iterador(arrayPersonas, funcion){
-    for(const numero of arrayPersonas){
-        funcion(numero);
+    for(const persona of arrayPersonas){
+        sumaEdades += persona.edad;
     }
 }
 
-iterador([numero.tuEdad], operaciones("sumar"));
-console.log(iterador);
+iterador(arrayPersonas, operaciones("sumar"));
+console.log(sumaEdades);
 
+//  MOSTRAR USUARIOS MAYORES DE 18 AÑOS
+let usuario = arrayPersonas.filter(item => item.edad > 18);
+console.log(usuario);
 
