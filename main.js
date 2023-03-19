@@ -23,16 +23,26 @@ const arrayPersonas = []
 
 for(let i = 0; i < 2; i++){
 
-    tuNombre= prompt("Ingresar su nombre");
-    tuEdad= parseInt(prompt("Ingresar su edad"));
+    tuNombre= prompt("Ingresar nombre");
+    tuNombre = tuNombre.toUpperCase();
+    tuEdad= parseInt(prompt("Ingresar edad"));
     if(tuEdad > 17){
                 alert("Puede entrar");
     }else{
                 alert("Debe entrar con un adulto");
     }
     tuEntrada= prompt("Tipo de entrada: 2D, 3D o 4D");
-    tuFormaDePago= prompt("Forma de pago: efectivo, credito o debito");
-
+    tuEntrada = tuEntrada.toUpperCase();
+    while(tuEntrada != "2D" && tuEntrada != "3D" && tuEntrada != "4D"){
+        tuEntrada= prompt("Tipo de entrada: 2D, 3D o 4D");
+        tuEntrada = tuEntrada.toUpperCase();
+    }
+    tuFormaDePago= prompt("Forma de pago: EFECTIVO, CREDITO o DEBITO");
+    tuFormaDePago = tuFormaDePago.toUpperCase();
+    while(tuFormaDePago != "EFECTIVO" && tuFormaDePago != "CREDITO" && tuFormaDePago != "DEBITO"){
+        tuFormaDePago= prompt("Forma de pago: EFECTIVO, CREDITO o DEBITO");
+        tuFormaDePago = tuFormaDePago.toUpperCase();
+    }
     const persona = new Persona(
         {tuNombre,
         tuEdad,
