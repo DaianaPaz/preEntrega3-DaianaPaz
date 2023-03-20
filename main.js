@@ -1,7 +1,7 @@
 /*ENTRADAS AL CINE*/
 
 function saludar(){
-    alert("Bienvenido/a");
+    alert("Bienvenidos/as");
 }
 
 class Persona{
@@ -93,4 +93,21 @@ console.log(sumaEdades);
 //  MOSTRAR USUARIOS MAYORES DE 18 AÑOS
 let usuario = arrayPersonas.filter(item => item.edad > 18);
 console.log(usuario);
+
+// UTILIZACION DEL DOCUMENT
+let parrafo = document.createElement("p");
+parrafo.innerHTML = "Son los usuarios ingresados";
+document.body.append(parrafo);
+
+let usuarios = document.getElementById("usuarios");
+arrayPersonas.forEach(item => {
+    let persona = document.createElement("li");
+    persona.innerHTML = `
+    <h2>Nombre: ${item.nombre}</h2>
+    <p>Edad: ${item.edad}</p>
+    <p>Tipo de entrada: ${item.entrada}</p>
+    <p>Forma de pago: ${item.formaDePago}</p>`;
+    usuarios.append(persona);
+    
+})
 
