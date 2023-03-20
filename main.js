@@ -95,6 +95,7 @@ let usuario = arrayPersonas.filter(item => item.edad > 18);
 console.log(usuario);
 
 // UTILIZACION DEL DOCUMENT
+
 let parrafo = document.createElement("p");
 parrafo.innerHTML = "Son los usuarios ingresados";
 document.body.append(parrafo);
@@ -107,7 +108,7 @@ arrayPersonas.forEach(item => {
     <p>Edad: ${item.edad}</p>
     <p>Tipo de entrada: ${item.entrada}</p>
     <p>Forma de pago: ${item.formaDePago}</p>`;
-    usuarios.append(persona);
-    
-})
+    usuarios.append(persona);   
+}
+)
 
