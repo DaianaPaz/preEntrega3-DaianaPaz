@@ -1,7 +1,5 @@
 /*ENTRADAS AL CINE*/
 
-// UTILIZACION DEL DOCUMENT
-
 class Persona{
     constructor(nombre, edad, tipoDeEntrada, formaDePago){
         this.nombre = nombre;
@@ -12,14 +10,6 @@ class Persona{
 }
 
 const personas = [];
-
-
-if(localStorage.getItem('personas')){
-    let persona = JSON.parse(localStorage.getItem('personas'));
-    for(let i = 0; i < persona.length; i++){
-        personas.push(persona[i]);
-    }
-}
 
 const formulario = document.getElementById('formulario');
 
@@ -37,7 +27,6 @@ function agregarPersona(){
     personas.push(nuevaPersona);
     localStorage.setItem('personas', JSON.stringify(personas));
     formulario.reset();
-    
 }
 
 const usuarios = document.getElementById('usuarios');
@@ -59,8 +48,8 @@ function mostrarPersonas(){
             <p>Tipo de entrada: ${persona.tipoDeEntrada}</p>
             <p>Forma de pago: ${persona.formaDePago}</p>
         </div>`;
+        div.className = "colorDeFondo";
         usuarios.appendChild(div);
     });
 }
-
 
